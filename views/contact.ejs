@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awsome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- main style-sheet -->
+    <link rel="stylesheet" href="style.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <div class="contact">
+        <p id="contact-heading"><i class="fa-solid fa-address-book"></i>Contact List</p>
+        
+        <div class="container">
+            <div class="add-contact">
+                <p class="add-h">Add New Contact</p>
+                <form action="/add" method="post">    
+                    <div>
+                        <label for="name">Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+                        <input type="text" name="name" id="name" placeholder="Enter Name" class="input" required>
+                    </div>
+            
+                    <div>
+                        <label for="phone">Phone No. : </label>
+                        <input type="number" name="phone" id="phone" class="input" placeholder="Enter Number" required>
+                    </div>
+            
+                    <button type="submit" class="add-btn"><i class="fa-solid fa-plus"></i>&nbsp; Add Contact</button>
+                </form>
+            </div>
+
+            <div class="contact-list">
+                <ul class="contact-items">
+                    <% for(let i of contact_List){ %>
+                        <li>
+    
+                            <div>
+                                <p><i class="fa-solid fa-angles-right"></i> &nbsp;&nbsp;&nbsp;<%= i.name %></p>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i class="fa-solid fa-phone"></i> &nbsp;&nbsp;<%= i.phone %> </p>
+                            </div>
+    
+                            <div>
+                                <a href="/remove/?id=<%= i._id %>">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </a>
+                            </div>
+    
+                        </li>
+                        <hr>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+        </div>
+    
+    <!-- font awsome script -->
+    <script src="https://kit.fontawesome.com/09c0200c9f.js" crossorigin="anonymous"></script>
+    <!-- main script -->
+    <script src="script.js"></script>
+</body>
+</html>

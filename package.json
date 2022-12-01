@@ -1,0 +1,18 @@
+{
+  "name": "contactlist",
+  "version": "2.23.40",
+  "description": "contact list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Naman Nag",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoos": "^0.0.1-security",
+    "mongoose": "^6.7.2"
+  }
+}
